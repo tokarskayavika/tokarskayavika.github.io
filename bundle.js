@@ -48,9 +48,9 @@
 	
 	var _response = __webpack_require__(1);
 	
-	__webpack_require__(8);
+	__webpack_require__(7);
 	
-	__webpack_require__(9);
+	__webpack_require__(8);
 	
 	_response.searchInput.onkeydown = _response.getResponse;
 
@@ -63,41 +63,45 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.paging = exports.inputValue = exports.videoPanel = exports.videoPage = exports.searchInput = undefined;
+	exports.inputValue = exports.paging = exports.videoPanel = exports.videoPage = exports.searchInput = undefined;
 	exports.createSingleVideo = createSingleVideo;
 	exports.getResponse = getResponse;
 	
-	var _DOM = __webpack_require__(2);
+	var _paging = __webpack_require__(2);
 	
-	var DOM = _interopRequireWildcard(_DOM);
-	
-	var _paging = __webpack_require__(3);
-	
-	var _variables = __webpack_require__(4);
+	var _variables = __webpack_require__(3);
 	
 	var GLOBAL = _interopRequireWildcard(_variables);
 	
-	var _constants = __webpack_require__(7);
+	var _constants = __webpack_require__(6);
 	
-	var _pageresize = __webpack_require__(5);
+	var _pageresize = __webpack_require__(4);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
-	var searchInput = exports.searchInput = DOM.create('input', ['search-input']);
-	DOM.append(DOM.create('div', ['search-panel']), 'body');
-	DOM.append(searchInput, '.search-panel');
-	DOM.attr('.search-input', 'placeholder', 'search here...');
-	DOM.attr('.search-input', 'type', 'search');
+	var searchInput = exports.searchInput = document.createElement('input');
+	var videoWindow = document.createElement('div');
+	var videoPage = exports.videoPage = document.createElement('div');
+	var videoPanel = exports.videoPanel = document.createElement('div');
+	var paging = exports.paging = document.createElement('div');
 	
-	//create window for video
-	var videoWindow = DOM.create('div', ['video-window']);
-	var videoPage = exports.videoPage = DOM.create('div', ['video-page']);
-	var videoPanel = exports.videoPanel = DOM.append(DOM.create('div', ['video-panel']), 'body');
 	var inputValue = exports.inputValue = void 0;
 	
-	var paging = exports.paging = document.createElement('div');
-	paging.classList.add('paging-panel');
-	document.body.appendChild(paging);
+	(function initialState() {
+	    var searchPanel = document.createElement('div');
+	    searchPanel.classList.add('search-panel');
+	    document.body.appendChild(searchPanel);
+	    searchPanel.appendChild(searchInput);
+	    searchInput.setAttribute('placeholder', 'search here...');
+	    searchInput.setAttribute('type', 'search');
+	    searchInput.classList.add('search-input');
+	    videoWindow.classList.add('video-window');
+	    videoPage.classList.add('video-page');
+	    videoPanel.classList.add('video-panel');
+	    document.body.append(videoPanel);
+	    paging.classList.add('paging-panel');
+	    document.body.appendChild(paging);
+	})();
 	
 	function cleanInput() {
 	    searchInput.value = null;
@@ -117,7 +121,7 @@
 	    for (var k = 0; k < Object.keys(videoData).length; k++) {
 	        insideList += '<dt class="' + Object.keys(videoData)[k] + '-def"></dt>\n        <dd class="' + Object.keys(videoData)[k] + '">' + Object.values(videoData)[k] + '</dd>';
 	    }
-	    DOM.append(newVideoWindow, '.page-' + pageNumber);
+	    document.querySelector('.page-' + pageNumber).appendChild(newVideoWindow);
 	    insideList = '<a href=\'https://www.youtube.com/watch?v=' + info.id + '\'><image src=\'' + info.snippet.thumbnails.medium.url + '\'></a>\n                <dl>' + insideList + '</dl>';
 	    newVideoWindow.innerHTML = insideList;
 	}
@@ -175,57 +179,6 @@
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.create = create;
-	exports.append = append;
-	exports.attr = attr;
-	function create(element, classes) {
-	    var el = document.createElement(element);
-	    for (var i = 0; i < classes.length; i++) {
-	        el.classList.add(classes[i]);
-	    }
-	    return el;
-	}
-	
-	function append(element, appendTo) {
-	    var elementsToAppend = document.querySelectorAll(appendTo);
-	    for (var i = 0; i < elementsToAppend.length; i++) {
-	        elementsToAppend[i].appendChild(element);
-	    }
-	    return element;
-	}
-	
-	function attr(selector, attribute, value) {
-	    var elements = document.querySelectorAll(selector);
-	    if (arguments.length === 3) {
-	        for (var i = 0; i < elements.length; i++) {
-	            elements[i].setAttribute(attribute, value);
-	        }
-	        return elements;
-	    } else if (arguments.length === 2) {
-	        var attrArray = [];
-	        for (var _i = 0; _i < elements.length; _i++) {
-	            attrArray.push(elements[_i].getAttribute(attribute));
-	        }
-	        return attrArray;
-	    }
-	}
-	
-	// export function addClass(selector, classes) {
-	//     let elements = document.querySelectorAll(selector);
-	//     for (let i = 0; i < elements.length; i++) {
-	//         elements[i].classList.add(classes);
-	//     }
-	// }
-
-/***/ },
-/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -239,15 +192,15 @@
 	exports.hidePrevNavs = hidePrevNavs;
 	exports.addNewNavs = addNewNavs;
 	
-	var _variables = __webpack_require__(4);
+	var _variables = __webpack_require__(3);
 	
 	var GLOBAL = _interopRequireWildcard(_variables);
 	
 	var _response = __webpack_require__(1);
 	
-	var _pageresize = __webpack_require__(5);
+	var _pageresize = __webpack_require__(4);
 	
-	var _nextpage = __webpack_require__(6);
+	var _nextpage = __webpack_require__(5);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
@@ -340,22 +293,16 @@
 	        hidePrevNavs();
 	    }
 	}
-	
-	// import * as GLOBAL from './constants';
 
 /***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/* 3 */
+/***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.notHiddenNavs = exports.mouseEndX = exports.mouseStartX = exports.prevPage = exports.nextPage = undefined;
-	
-	var _pageresize = __webpack_require__(5);
-	
 	var nextPage = exports.nextPage = void 0;
 	var prevPage = exports.prevPage = void 0;
 	var mouseStartX = exports.mouseStartX = 0;
@@ -363,7 +310,7 @@
 	var notHiddenNavs = exports.notHiddenNavs = void 0;
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -374,20 +321,17 @@
 	exports.pageElements = undefined;
 	exports.resizeFunc = resizeFunc;
 	
-	var _variables = __webpack_require__(4);
+	var _variables = __webpack_require__(3);
 	
 	var GLOBAL = _interopRequireWildcard(_variables);
 	
-	var _DOM = __webpack_require__(2);
-	
-	var DOM = _interopRequireWildcard(_DOM);
-	
-	var _paging = __webpack_require__(3);
+	var _paging = __webpack_require__(2);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	var pageElements = exports.pageElements = void 0;
-	var videoPage = DOM.create('div', ['video-page']);
+	var videoPage = document.createElement('div');
+	videoPage.classList.add('video-page');
 	
 	function recreatePaging(leftEl) {
 	    var currentIndex = +leftEl.parentNode.classList[1].substring(5);
@@ -456,7 +400,7 @@
 	window.addEventListener('resize', resizeFunc);
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -468,15 +412,17 @@
 	
 	var _response = __webpack_require__(1);
 	
-	var _pageresize = __webpack_require__(5);
+	var _pageresize = __webpack_require__(4);
 	
-	var _variables = __webpack_require__(4);
+	var _variables = __webpack_require__(3);
 	
 	var GLOBAL = _interopRequireWildcard(_variables);
 	
-	var _constants = __webpack_require__(7);
+	var _response2 = __webpack_require__(1);
 	
-	var _paging = __webpack_require__(3);
+	var _constants = __webpack_require__(6);
+	
+	var _paging = __webpack_require__(2);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
@@ -514,7 +460,7 @@
 	        return;
 	    }
 	    var videoIDs = '';
-	    fetch('https://www.googleapis.com/youtube/v3/search?key=' + _constants.API_KEY + '&type=video&part=snippet&maxResults=' + _constants.MAX_RES + '&q=' + _response.inputValue + '&pageToken=' + GLOBAL.nextPage).then(function (response) {
+	    fetch('https://www.googleapis.com/youtube/v3/search?key=' + _constants.API_KEY + '&type=video&part=snippet&maxResults=' + _constants.MAX_RES + '&q=' + _response2.inputValue + '&pageToken=' + GLOBAL.nextPage).then(function (response) {
 	        return response.json();
 	    }).then(function (data) {
 	        for (var i = 0; i < data.items.length; i++) {
@@ -533,7 +479,7 @@
 	}
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -548,7 +494,7 @@
 	var API_KEY = exports.API_KEY = 'AIzaSyAHdjm7LHRb6W9oib4QW0qr5YEjX4re9Jc';
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -558,24 +504,22 @@
 	});
 	exports.checkPage = checkPage;
 	
-	var _paging = __webpack_require__(3);
+	var _paging = __webpack_require__(2);
 	
-	var _pageresize = __webpack_require__(5);
+	var _constants = __webpack_require__(6);
 	
-	var _constants = __webpack_require__(7);
-	
-	var _variables = __webpack_require__(4);
+	var _variables = __webpack_require__(3);
 	
 	var GLOBAL = _interopRequireWildcard(_variables);
 	
-	var _nextpage = __webpack_require__(6);
+	var _nextpage = __webpack_require__(5);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function turnPage(direction) {
 	    var currentPage = document.querySelector('.current-page');
 	    var currentNav = document.querySelector('.current-nav');
-	    var pagingPanel = document.querySelector('.paging-panel');
+	
 	    if (direction === 'left') {
 	        if (!currentPage.previousSibling) {
 	            return;
@@ -635,14 +579,14 @@
 	});
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _pageswipe = __webpack_require__(8);
+	var _pageswipe = __webpack_require__(7);
 	
-	var _variables = __webpack_require__(4);
+	var _variables = __webpack_require__(3);
 	
 	var GLOBAL = _interopRequireWildcard(_variables);
 	
