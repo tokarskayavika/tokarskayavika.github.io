@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="style/reset.css">
+    <link type="text/css" rel="stylesheet" href="style/fonts/fontawesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="style/fonts/simplelineicons/css/simple-line-icons.css">
+    <link type="text/css" rel="stylesheet" href="style/stylesheet.css">
+    <title>Final</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header>
+            <a href="#" class="logo"></a>
+            <div class="navigation">
+                <nav class="page-navigation">
+                    <a href="#">Sell</a>
+                    <a href="#">Registry</a>
+                    <a href="#">Community</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">Mobile</a>
+                    <a href="#">Gift Cards</a>
+                </nav>
+                <nav class="button-navigation">
+                    <a href="#">Cart
+                            <span class="icon-basket"></span>
+                    </a>
+                    <a href="#">Whislost
+                            <span class="icon-present"></span>
+                    </a>
+                    <a href="#">Sign In</a>
+                    <a href="#">Register</a>
+                </nav>
+            </div>
+            <nav class="categories">
+                <a href="#">
+                    <div>Art</div>
+                </a>
+                <div class="dropdown-link" tabindex="0">
+                    Home & Living
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>
+                                <img class="item-pic" src="images/item-pic.png" alt="item 1" />
+                                <div class="item-description">
+                                    <a href="#"><h6>Item Name Here</h6></a>
+                                    <p>Lorem Ipsum is simply dummy text of the</p>
+                                    <a href="#" class="more-button" role="button">More Detail</a>
+                                </div>
+                            </li>
+                            <li>
+                                <img class="item-pic" src="images/item-pic.png" alt="item 2" />
+                                <div class="item-description">
+                                    <a href="#"><h6>Item Name Here</h6></a>
+                                    <p>Lorem Ipsum is simply dummy text of the</p>
+                                    <a href="#" class="more-button" role="button">More Detail</a>
+                                </div>
+                            </li>
+                            <li>
+                                <img class="item-pic" src="images/item-pic.png" alt="item 3" />
+                                <div class="item-description">
+                                    <a href="#"><h6>Item Name Here</h6></a>
+                                    <p>Lorem Ipsum is simply dummy text of the</p>
+                                    <a href="#" class="more-button" role="button">More Detail</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div><a href="#" class="all">See All Items</a></div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div>Jewelry</div>
+                </a>
+                <a href="#">
+                    <div>Women</div>
+                </a>
+                <a href="#">
+                    <div>Men</div>
+                </a>
+                <a href="#">
+                    <div>Kids</div>
+                </a>
+                <a href="#">
+                    <div>Vintage</div>
+                </a>
+                <a href="#">
+                    <div>Weddings</div>
+                </a>
+                <a href="#">
+                    <div>More</div>
+                </a>
+            </nav>
+        </header>
+        <main>
+            <section class="products">
+                <section class="left-column">
+                    <article class="men" tabindex="0">
+                        <img src="./images/men.png" alt="men's wear" />
+                        <div class="description">
+                            <div class="desc-block">
+                                <h2>Men&#8217;s Wear</h2>
+                                <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem</p>
+                            </div>
+                            <p class="short-desc">Lorem ipsum is simply dummy text</p>
+                        </div>
+                        <div class="men-price">
+                            <div class="tooltip">
+                                <a href="#" class="tooltip-name">Men Clothes</a>
+                                <a href="#" class="tooltip-present icon-present"></a>
+                                <a href="#" class="tooltip-basket icon-basket">
+                                    <div class="add-tooltip">add to cart
+                                        <div class="large-corner"></div>
+                                        <div class="small-corner"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="tooltip-price">
+                                    <span class="currency">$</span>149.<span class="mantissa">00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <form class="search">
+                        <input type="text" id="search-input" placeholder="Search your product here">
+                        <!-- I've made 2-color placeholder by using label, but it does't hide if I type some text into input.
+                            I guess, it should be done by javascript-->
+                        <label for="search-input">( e.g.: Silver diamond ring )</label>
+                        <button class="search-button"><i class="fa fa-search"></i></button>
+                    </form>
+                    <article class="crafts" tabindex="0">
+                        <img src="./images/crafts.png" alt="crafts" />
+                        <div class="description">
+                            <h3>Crafts</h3>
+                            <p>Lorem ipsum is simply dummy text of the printing and typesetting</p>
+                        </div>
+                        <div class="crafts-price">
+                            <div class="tooltip">
+                                <a href="#" class="tooltip-name">CRAFTS</a>
+                                <a href="#" class="tooltip-present icon-present"></a>
+                                <a href="#" class="tooltip-basket icon-basket">
+                                    <div class="add-tooltip">add to cart
+                                        <div class="large-corner"></div>
+                                        <div class="small-corner"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="tooltip-price">
+                                    <span class="currency">$</span>99.<span class="mantissa">00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <section class="right-column">
+                    <article class="women" tabindex="0">
+                        <img src="./images/women.png" alt="women's wear" />
+                        <div class="description">
+                            <h3>Women&#8217;s Wear</h3>
+                            <p>Lorem ipsum is simply dummy text of the printing and typesetting</p>
+                        </div>
+                        <div class="women-price">
+                            <div class="tooltip">
+                                <a href="#" class="tooltip-name">Women Clothes</a>
+                                <a href="#" class="tooltip-present icon-present"></a>
+                                <a href="#" class="tooltip-basket icon-basket">
+                                    <div class="add-tooltip">add to cart
+                                        <div class="large-corner"></div>
+                                        <div class="small-corner"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="tooltip-price">
+                                    <span class="currency">$</span>199.<span class="mantissa">00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="kids" tabindex="0">
+                        <img src="./images/kids.png" alt="kid's wear" />
+                        <div class="description">
+                            <h3>Baby&#8217;s Wear</h3>
+                            <p>Lorem ipsum is simply dummy text of the printing and typesetting</p>
+                        </div>
+                        <div class="kids-price">
+                            <div class="tooltip">
+                                <a href="#" class="tooltip-name">Baby Shop</a>
+                                <a href="#" class="tooltip-present icon-present"></a>
+                                <a href="#" class="tooltip-basket icon-basket">
+                                    <div class="add-tooltip">add to cart
+                                        <div class="large-corner"></div>
+                                        <div class="small-corner"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="tooltip-price">
+                                    <span class="currency">$</span>99.<span class="mantissa">00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry" tabindex="0">
+                        <img src="./images/jewelry.png" alt="jewelry" />
+                        <div class="description">
+                            <h2>jewelry</h2>
+                            <div class="arrow-panel">
+                                <div class="round icon-arrow-down"></div>
+                                <div class="corner"></div>
+                            </div>
+                        </div>
+                        <div class="jewelry-price">
+                            <div class="tooltip">
+                                <a href="#" class="tooltip-name">JEWELRY</a>
+                                <a href="#" class="tooltip-present icon-present"></a>
+                                <a href="#" class="tooltip-basket icon-basket">
+                                    <div class="add-tooltip">add to cart
+                                        <div class="large-corner"></div>
+                                        <div class="small-corner"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="tooltip-price">
+                                    <span class="currency">$</span>199.<span class="mantissa">00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </section>
+            <section class="new-products" tabindex="0" role="slider">
+                <a href="#"><h2 class="header-link"><span class="underline">New Products</span></h2></a>
+                <div class="arrows">
+                    <a href="#" class="left-arrow icon-arrow-left" role="button" title="Turn page backword"></a>
+                    <a href="#" class="right-arrow icon-arrow-right" role="button" title="Turn page forward"></a>
+                </div>
+                <section class="slider-container">
+                    <article tabindex="0">
+                        <img src="./images/new-prod-1.png" alt="bags" />
+                        <div class="item-price">
+                            <div class="tooltip">
+                                <a href="#" class="tooltip-name">Baby Shop</a>
+                                <a href="#" class="tooltip-present icon-present"></a>
+                                <a href="#" class="tooltip-basket icon-basket">
+                                    <div class="add-tooltip">add to cart
+                                        <div class="large-corner"></div>
+                                        <div class="small-corner"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="tooltip-price">
+                                    <span class="currency">$</span>49.<span class="mantissa">00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article tabindex="0">
+                        <img src="./images/new-prod-2.png" alt="accessorize" />
+                        <div class="item-price">
+                            <div class="tooltip">
+                                <a href="#" class="tooltip-name">Baby Shop</a>
+                                <a href="#" class="tooltip-present icon-present"></a>
+                                <a href="#" class="tooltip-basket icon-basket">
+                                    <div class="add-tooltip">add to cart
+                                        <div class="large-corner"></div>
+                                        <div class="small-corner"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="tooltip-price">
+                                    <span class="currency">$</span>99.<span class="mantissa">00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article tabindex="0">
+                        <img src="./images/new-prod-3.png" alt="watches" />
+                        <div class="item-price">
+                            <div class="tooltip">
+                                <a href="#" class="tooltip-name">Baby Shop</a>
+                                <a href="#" class="tooltip-present icon-present"></a>
+                                <a href="#" class="tooltip-basket icon-basket">
+                                    <div class="add-tooltip">add to cart
+                                        <div class="large-corner"></div>
+                                        <div class="small-corner"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="tooltip-price">
+                                    <span class="currency">$</span>199.<span class="mantissa">00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </section>
+            <section class="featured-products" tabindex="0" role="slider">
+                <a href="#"><h2 class="header-link"><span class="underline">Featured Products</span></h2></a>
+                <div class="arrows">
+                    <a href="#" class="left-arrow icon-arrow-left" role="button" title="Turn page backword"></a>
+                    <a href="#" class="right-arrow icon-arrow-right" role="button" title="Turn page forward"></a>
+                </div>
+                <section class="slider-container">
+                    <article>
+                        <div class="image-container">
+                            <a href="#"><img src="./images/featured-1.png" alt="featured dress 1" /></a>
+                            <div class="info">20% OFF</div>
+                        </div>
+                        <div class="prod-description">
+                            <a href="#"><h5>Product Title here</h5></a>
+                            <a href="#">
+                                <p>Short Description here</p>
+                            </a>
+                        </div>
+                        <div class="prod-buttons">
+                            <a href="#" class="exchange"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+                            <a href="#" class="present icon-present"></a>
+                            <a href="#" class="basket icon-basket"></a>
+                            <a href="#" class="prod-price">
+                                    99.<span class="mantissa-number">00</span>
+                                </a>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image-container">
+                            <a href="#"><img src="./images/featured-2.png" alt="featured dress 2" /></a>
+                        </div>
+                        <div class="prod-description">
+                            <a href="#"><h5>Product Title here</h5></a>
+                            <a href="#">
+                                <p>Short Description here</p>
+                            </a>
+                        </div>
+                        <div class="prod-buttons">
+                            <a href="#" class="exchange"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+                            <a href="#" class="present icon-present"></a>
+                            <a href="#" class="basket icon-basket"></a>
+                            <a href="#" class="prod-price">
+                                    99.<span class="mantissa-number">00</span>
+                                </a>
+                        </div>
+                    </article>
+                    <article class="new">
+                        <div class="image-container">
+                            <a href="#"><img src="./images/featured-3.png" alt="featured dress 3" /></a>
+                            <div class="info">New</div>
+                        </div>
+                        <div class="prod-description">
+                            <a href="#"><h5>Product Title here</h5></a>
+                            <a href="#">
+                                <p>Short Description here</p>
+                            </a>
+                        </div>
+                        <div class="prod-buttons">
+                            <a href="#" class="exchange"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+                            <a href="#" class="present icon-present"></a>
+                            <a href="#" class="basket icon-basket"></a>
+                            <a href="#" class="prod-price">
+                                    99.<span class="mantissa-number">00</span>
+                                </a>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image-container">
+                            <a href="#"><img src="./images/featured-4.png" alt="featured dress 4" /></a>
+                        </div>
+                        <div class="prod-description">
+                            <a href="#"><h5>Product Title here</h5></a>
+                            <a href="#">
+                                <p>Short Description here</p>
+                            </a>
+                        </div>
+                        <div class="prod-buttons">
+                            <a href="#" class="exchange"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+                            <a href="#" class="present icon-present"></a>
+                            <a href="#" class="basket icon-basket"></a>
+                            <a href="#" class="prod-price">
+                                    99.<span class="mantissa-number">00</span>
+                                </a>
+                        </div>
+                    </article>
+                </section>
+            </section>
+            <section class="about">
+                <a href="#"><h2 class="header-link"><span class="underline">Who We Are</span></h2></a>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+                    more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class="button-container">
+                    <a href="#" class="choose">Chose Products</a>
+                    <a href="#" class="register">Register/ Login</a>
+                    <a href="#" class="checkout">Checkout</a>
+                </div>
+                <a href="#" class="registration-button">Register Now</a>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="wrapper">
+            <div class="shopping">
+                <a href="#"><h3>Shopping With Us</h3></a>
+                <ul>
+                    <li><a href="#">why shop with us?</a></li>
+                    <li><a href="#">how it works</a></li>
+                    <li><a href="#">delivery</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">where's my order</a></li>
+                    <li><a href="#">contact & help</a></li>
+                    <li><a href="#">wedding list</a></li>
+                    <li><a href="#">wish lists</a></li>
+                    <li><a href="#">gift vouchers</a></li>
+                </ul>
+            </div>
+            <div class="about-us">
+                <a href="#"><h3>About Us</h3></a>
+                <ul>
+                    <li><a href="#">our story</a></li>
+                    <li><a href="#">customer contact</a></li>
+                    <li><a href="#">awards</a></li>
+                    <li><a href="#">press centre</a></li>
+                    <li><a href="#">work with us</a></li>
+                    <li><a href="#">terms & conditions</a></li>
+                    <li><a href="#">privacy & cookies</a></li>
+                </ul>
+            </div>
+            <div class="selling">
+                <a href="#"><h3>Selling With Us</h3></a>
+                <ul>
+                    <li><a href="#">why join?</a></li>
+                    <li><a href="#">faqs</a></li>
+                    <li><a href="#">apply to sell with us</a></li>
+                    <li><a href="#">affiliates</a></li>
+                </ul>
+            </div>
+            <div class="subscribe">
+                <a href="#"><h3>Signup Newsletter</h3></a>
+                <form>
+                    <input type="email" placeholder="e.g.: abc@domain.com">
+                    <button>subscribe now</button>
+                </form>
+                <a href="#"><h3>Keep In Touch</h3></a>
+                <ul class="social-links">
+                    <li>
+                        <a href="#" class="wave"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="facebook"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="twitter"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="flickr"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="google"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p class="rights">Copyright &#9400; 2014 Gift Shop, All rights reserved</p>
+                <p class="author">Designed by <a href="#">Amysxain</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

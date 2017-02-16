@@ -1,0 +1,56 @@
+body {
+    position: relative;
+}
+canvas {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translate(-50%, 0);
+}
+
+span, .gameOver, .restartButton, .help {
+	position: absolute;
+	color: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+}
+
+span {
+	top: 42px;
+	left: 60%;
+}
+
+.gameOver, .restartButton, .help {
+	display: none;
+	left: 50%;
+}
+
+.gameOver {
+	top: 300px;
+	transform: translate(-50%, -150px);
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.restartButton {
+	top: 500px;
+	transform: translate(-50%, -250px);
+	background: #61a9e4;
+	width: 120px;
+	height: 40px;
+	border-radius: 40px;
+	font-size: 20px;
+	border: none;
+}
+
+.restartButton:hover {
+	cursor: pointer;
+	border: 2px solid #ffffff;
+	box-sizing: border-box;
+}
+
+.help {
+	top: 470px;
+	transform: translate(-50%, -235px);
+	font-size: 20px;
+	opacity: 0.7;
+}
